@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-<body>
-    <referenceContainer name="checkout.cart.totals.container">
-        <block type="checkout/cart" class="SDBullion\Nfusions\Block\Checkout\Countdown" name="checkout.cart.miles.countdown" after="-" template="SDBullion_Nfusions::checkout/cart/countdown.phtml"/>
-    </referenceContainer>
-</body>
-</page>
