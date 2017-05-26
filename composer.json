@@ -1,5 +1,5 @@
 {
-  "name": "sdbullion/nfusions-test",
+  "name": "sdbullion/nfusions",
   "description": "This extension adds the capability in Magento to import products prices from nFusion Solutions' reliable, enterprise-class cloud platform for global financial data. All settings are provided in the Magento admin. When you import product prices in Magento this plugin will import prices from the nFusion Solutions cloud platform in the base currency of your Magento store. Through the use of a cron job the plugin can update prices automatically on a scheduled interval.",
   "type": "magento2-module",
   "version": "2.0.1",
