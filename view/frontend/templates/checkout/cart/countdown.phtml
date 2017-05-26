@@ -1,0 +1,40 @@
+	<!-- Display the countdown timer in an element -->
+	<p style="display:none;" id="demo"></p>
+	<script type="text/javascript">
+		require(['jquery'],function($){
+			var countDownDate;
+			var now ;
+			var response = false;
+			var param = 'ajax=1';
+				$.ajax({
+					showLoader: true,
+					url: '<?php echo $block->get_update_url();?>',
+					data: param,
+					type: "POST",
+					dataType: 'json'
+				}).done(function (data) {
+				   countDownDate = data.end;
+				   now = data.now;
+				   response = true;
+				});
+				var x = setInterval(function() {
+				console.log(now);
+				console.log(countDownDate);
+				var distance = countDownDate - now;
+				var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+				$("#demo").html(days+"d "+hours+"h "+minutes+"m "+seconds+"s ");
+				if(response){
+					 $("#demo").show();
+				}
+				now = parseInt(now) + 1000;
+					if (distance < 0) {
+					clearInterval(x);
+					$("#demo").html("EXPIRED");
+					window.location.href = "<?php echo $block->get_update_url();?>";
+				}
+				}, 1000);
+    });
+	</script>

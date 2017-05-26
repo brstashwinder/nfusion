@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+	<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+		<preference for="Magento\Catalog\Model\Product" type="SDBullion\Nfusions\Model\Product" />
+		<preference for="Magento\Sales\Block\Adminhtml\Order\Create\Search\Grid\Renderer\Price" type="SDBullion\Nfusions\Block\Adminhtml\Order\Create\Search\Grid\Renderer\Price" />
+		<preference for="Magento\Sales\Block\Adminhtml\Order\Create\Search\Grid" type="SDBullion\Nfusions\Block\Adminhtml\Order\Create\Search\Grid" />
+		<type name="Magento\Framework\Console\CommandList">
+			<arguments>
+				<argument name="commands" xsi:type="array">
+					<item name="Cache_Upgrade" xsi:type="object">SDBullion\Nfusions\Console\Command\CacheUpgradeCommand</item>
+					<item name="save_product" xsi:type="object">SDBullion\Nfusions\Console\Command\SaveProductCommand</item>
+				</argument>
+			</arguments>
+		</type>
+	</config>

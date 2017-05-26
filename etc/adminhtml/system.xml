@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="sdbullion_nfusions" translate="label" sortOrder="100">
+            <!-- add a new tab with id sdbullion_nfusions -->
+            <label>nFusion Solutions</label>
+        </tab>
+        <section id="sdbullion_nfusions" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <!-- add a new section with id sdbullion_nfusions and for tab sdbullion_nfusions -->
+            <class>separator-top</class>
+            <label>Catalog Integration Settings</label>
+            <tab>sdbullion_nfusions</tab>
+            <resource>SDBullion_First::nfusions_config</resource>
+            <group id="nfusions_field" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Catalog Integration Settings</label>
+				
+                <field id="enabled_field" translate="label" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="0"
+                       showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				
+                <field id="tenant_alias" translate="label comment" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+					<label>Tenant Alias</label>
+                </field>
+				 <field id="token_field" translate="label comment" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+					<label>API Token</label>
+                </field>
+
+				 <field id="cachelife_field" translate="label comment" sortOrder="7" type="text" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Cache Life</label>
+                    <comment>In Seconds</comment>
+                    <validate>validate-number required-entry</validate>
+                </field>
+				
+				 <field id="locktime_field" translate="label comment" sortOrder="7" type="text" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Checkout Timer</label>
+                    <comment>In Seconds</comment>
+                    <validate>validate-number required-entry</validate>
+                </field>
+				
+            </group>
+        </section>
+    </system>
+</config>

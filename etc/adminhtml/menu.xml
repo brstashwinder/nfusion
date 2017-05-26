@@ -1,0 +1,19 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<update id="SDBullion::nfusion_solutions" 
+			title="nFusion Solutions"
+			module="SDBullion_Nfusions"
+			sortOrder="9999"
+			resource="Magento_Backend::content"
+		/>
+		<add id="SDBullion_Nfusions::nfusions"
+			title="Catalog Integration Settings"
+			module="SDBullion_Nfusions"
+			sortOrder="9999"
+			resource="Magento_Backend::content"
+
+			parent="SDBullion::nfusion_solutions"
+			action="adminhtml/system_config/edit/section/sdbullion_nfusions"
+		/>
+	</menu>
+</config>
